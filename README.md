@@ -5,7 +5,7 @@ Easy include cordova platform and cordova plugins into your webpack application
 ### Why do you need it
 
 * You're using custom cordova platform-based workflow (involving building the app from android-studio/xcode)
-* You don't use cordova CLI
+* You're not using/don't want to use cordova CLI
 * You want to NPM/Yarn to take control of your cordova versioning
 * You want to build cordova/cordova-plugin sources directly from node_modules
 * You want to bundle whole cordova stuff into one file/let webpack control it
@@ -23,6 +23,18 @@ or
 ```
     yarn add webpack-cordova-bundle-plugin --dev
 ```
+
+You also need ```cordova-js``` package (contains common cordova js sources, without platform overrides), normally it comes with cordova package, but let's make sure to install it:
+
+```
+    npm install cordova-js --save-dev
+```
+or
+```
+    yarn add cordova-js --dev
+```
+
+And make sure you have installed your cordova platform package (cordova-ios/cordova-android/etc...)
 
 Add to your webpack.config.js:
 
