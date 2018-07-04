@@ -6,6 +6,11 @@
   "repository": "https://github.com/asvetliakov/webpack-plugin-cordova-bundle",
   "author": "Alexey Svetliakov <devpieron@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "cordova",
+    "webpack",
+    "webpack-plugin"
+  ],
   "dependencies": {
     "xml2js": "^0.4.19"
   },
