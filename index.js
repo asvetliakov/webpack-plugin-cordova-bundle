@@ -100,7 +100,6 @@ module.exports.defaults = module.exports.WebpackCordovaBundlePlugin = class Webp
                             }
                         } catch (e) {
                             // ignore
-                            console.log("");
                         }
                     }
                 }
