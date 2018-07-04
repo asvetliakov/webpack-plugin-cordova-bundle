@@ -29,8 +29,8 @@ module.exports = async function cordovaPluginsLoader(emptySource) {
             pluginList.push(...files.map(f => {
                 // since it's streated as source and we need require.resolve without quotes, build string manually instead of JSON.stringify()
                 const str = `{
-                    "id": require.resolve('${f.file}'),
-                    "file": require.resolve('${f.file}'),
+                    "id": require.resolve('${plugin}.${f.name}'),
+                    "file": require.resolve('${plugin}.${f.name}'),
                     "pluginId": "${plugin}",
                     ${f.clobbers.length ? `"clobbers": ${JSON.stringify(f.clobbers)},` : ""}
                     ${f.merges.length ? `"merges": ${JSON.stringify(f.merges)},` : ""}

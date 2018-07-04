@@ -78,9 +78,7 @@ Also it's recommended to use ```nohoist``` in yarn workspaces for cordova projec
     },
 ```
 
-2) ```cordova.require('SomePlugin.someFile')``` won't work now in your app. Use standard ```require("SomePlugin.someFile")/import "SomePlugin.someFile"/import "some-cordova-plugin/www/someFile"``` and webpack will do the job for you. Or just use global reference from plugin, i.e. ```window.StatusBar.hide()```
-
-3) Few plugins are bad-written and contains invalid require references, for example ```cordova-plugin-file```, the temporary fix can be by adding the webpack alias, i.e.:
+2) Few plugins are bad-written and contains invalid require references, for example ```cordova-plugin-file```, the temporary fix can be by adding the webpack alias, i.e.:
 ```js
     resolve: {
         alias: {

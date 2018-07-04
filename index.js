@@ -72,7 +72,7 @@ module.exports.defaults = module.exports.WebpackCordovaBundlePlugin = class Webp
                             }
                         });
                     })
-                } else if (request.request && this.plugins.find(p => request.request.startsWith(p))) {
+                } else if (request.request && !!this.plugins.find(p => request.request.startsWith(p + "."))) {
                     // require("cordova-plugin.a"); shit
                     const pluginName = request.request.split(".")[0];
                     const moduleName = request.request.split(".").slice(1).join(".");
@@ -129,7 +129,10 @@ module.exports.defaults = module.exports.WebpackCordovaBundlePlugin = class Webp
         compiler.hooks.compilation.tap(this.pluginName, compilation => {
             compilation.hooks.moduleIds.tap(this.pluginName, modules => {
                 modules.forEach(module => {
-                    if (module.rawRequest && (module.rawRequest.startsWith("cordova/") || module.rawRequest === "cordova")) {
+                    if (module.rawRequest && (
+                        module.rawRequest === "cordova" || module.rawRequest.startsWith("cordova/") ||
+                        !!this.plugins.find(p => module.rawRequest.startsWith(p + "."))
+                    )) {
                         module.id = module.rawRequest;
                     }
                 })
