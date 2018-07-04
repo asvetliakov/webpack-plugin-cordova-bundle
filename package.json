@@ -1,0 +1,15 @@
+{
+  "name": "webpack-cordova-bundle-plugin",
+  "version": "1.0.0",
+  "description": "Bundle cordova platform and plugins with webpack",
+  "main": "index.js",
+  "repository": "https://github.com/asvetliakov/webpack-plugin-cordova-bundle",
+  "author": "Alexey Svetliakov <devpieron@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "xml2js": "^0.4.19"
+  },
+  "peerDependencies": {
+    "webpack": ">= 4"
+  }
+}
