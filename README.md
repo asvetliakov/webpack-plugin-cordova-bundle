@@ -78,7 +78,17 @@ Also it's recommended to use ```nohoist``` in yarn workspaces for cordova projec
     },
 ```
 
-2) Few plugins are bad-written and contains invalid require references, for example ```cordova-plugin-file```, the temporary fix can be by adding the webpack alias, i.e.:
+2) Cordova.js references PLATFORM_VERSION_BUILD_LABEL for specific platform, just define it by using DefinePlugin:
+```js
+    plugins: [
+        new webpack.DefinePlugin({
+            PLATFORM_VERSION_BUILD_LABEL: JSON.stringify(require("cordova-ios/package.json").version), // substitute cordova-ios with your platform package
+        }),
+    ],
+
+```
+
+3) Few plugins are bad-written and contains invalid require references, for example ```cordova-plugin-file```, the temporary fix can be by adding the webpack alias, i.e.:
 ```js
     resolve: {
         alias: {
