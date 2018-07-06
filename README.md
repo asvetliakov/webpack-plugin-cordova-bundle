@@ -96,3 +96,20 @@ Also it's recommended to use ```nohoist``` in yarn workspaces for cordova projec
         }
     }
 ```
+
+4) Mangling
+If you encounter any errors in production builds, exclude uglifyjs in cordova:
+```js
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+
+module.exports = {
+    optimization: {
+        minimizer: [
+            new UglifyJSPlugin({
+                exclude /.*cordova.*/,
+            }),
+        ],
+    },
+}
+
+```
