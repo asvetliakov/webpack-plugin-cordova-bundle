@@ -24,15 +24,16 @@ or
     yarn add webpack-cordova-bundle-plugin --dev
 ```
 
-You also need ```cordova-js``` package (contains common cordova js sources, without platform overrides), normally it comes with cordova package, but let's make sure to install it:
+You also need ```cordova-js``` package (contains common cordova js sources, without platform overrides):
 
 ```
-    npm install cordova-js --save-dev
+    npm install cordova-js@4 --save-dev
 ```
 or
 ```
-    yarn add cordova-js --dev
+    yarn add cordova-js@4 --dev
 ```
+*Note* cordova-js@5 is not supported since they've removed browserify-ready sources which this plugin uses.
 
 And make sure you have installed your cordova platform package (cordova-ios/cordova-android/etc...)
 
