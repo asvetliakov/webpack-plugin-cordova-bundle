@@ -1,6 +1,6 @@
 {
   "name": "webpack-cordova-bundle-plugin",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Bundle cordova platform and plugins with webpack",
   "main": "index.js",
   "repository": "https://github.com/asvetliakov/webpack-plugin-cordova-bundle",
@@ -16,5 +16,8 @@
   },
   "peerDependencies": {
     "webpack": ">= 4"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.0"
   }
 }
