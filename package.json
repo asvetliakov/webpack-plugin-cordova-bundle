@@ -12,7 +12,7 @@
     "webpack-plugin"
   ],
   "dependencies": {
-    "xml2js": "^0.4.19"
+    "xml2js": "^0.5.0"
   },
   "peerDependencies": {
     "webpack": ">= 4"
